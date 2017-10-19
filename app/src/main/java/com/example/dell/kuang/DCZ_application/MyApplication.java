@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import com.chiclam.android.updater.Updater;
 import com.chiclam.android.updater.UpdaterConfig;
@@ -37,5 +38,10 @@ public class MyApplication extends Application{
         Intent viewDownloadIntent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
         viewDownloadIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         INSTANCE.startActivity(viewDownloadIntent);*/
+    }
+    private void sf(){
+        SharedPreferences sf = getSharedPreferences("user",MODE_PRIVATE);
+        String username = sf.getString("username","");//第二个参数为默认值
+        sf.edit().putString("username","张三").commit();
     }
 }
