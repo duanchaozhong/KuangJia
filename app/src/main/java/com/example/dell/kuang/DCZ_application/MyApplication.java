@@ -10,6 +10,8 @@ import com.chiclam.android.updater.Updater;
 import com.chiclam.android.updater.UpdaterConfig;
 import com.example.dell.kuang.R;
 
+import org.litepal.LitePal;
+
 /**
  * Created by DELL on 2017/10/19.
  */
@@ -21,6 +23,7 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
         context=getApplicationContext();
+        LitePal.initialize(this);//litepal数据库
     }
 
     public static Context getContext(){

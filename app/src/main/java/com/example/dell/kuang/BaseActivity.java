@@ -17,6 +17,7 @@ public class BaseActivity extends Activity {
         setContentView(R.layout.activity_base);
         StatusBarUtil.setImgTransparent(this);      //这行是让标题沉浸
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//禁止横屏
+        ActivityUtils.getInstance().pushActivity(this);
         Log.i("BaseActivity",getClass().getSimpleName());
         Log.i("dcz栈的数量", ActivityUtils.getInstance().ActivitySize()+"");
         for(int i=0;i<ActivityUtils.getInstance().ActivitySize();i++){
